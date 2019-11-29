@@ -1,2 +1,8 @@
+*.egg-info
+*.pyc
+.vscode
 env
 transposed_*
+data
+model
+output
