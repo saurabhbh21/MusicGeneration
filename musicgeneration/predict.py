@@ -1,7 +1,7 @@
 import pickle
 import numpy
 from music21 import instrument, note, stream, chord
-from musicgeneration.neuralnet import NeuralNet
+from musicgeneration.neuralnet import NeuralNetwork
 
 
 

@@ -42,7 +42,7 @@ class Preprocess(object):
     def prepareSequence(self, notes, n_vocab):
         '''Prepare sequence data which serves as neural network input'''
 
-        sequence_length=5
+        sequence_length=100
        
         #get all pitchnames
         pitch_names = sorted(set(item for item in notes))
@@ -66,12 +66,12 @@ class Preprocess(object):
         #reshape network input and output data for sequential-NN (viz LSTM/GRU)
         network_input = np.reshape(network_input, (num_patterns, sequence_length, 1))
         #normalize input
-        network_input = network_input/float(n_vocab)
+        normalized_input = network_input/float(n_vocab)
         
         #one-hot encode output vector
         network_output = tf.keras.utils.to_categorical(network_output)
 
-        return (network_input, network_output)
+        return (network_input, normalized_input)
 
 
 
